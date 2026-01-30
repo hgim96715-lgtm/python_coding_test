@@ -1,9 +1,8 @@
 str = input()
-change_str=[]
+res=""
 for i in str:
     if i.isupper():
-        change_str.append(i.lower())
+        res+=i.lower()
     else:
-       change_str.append(i.upper())
-    
-print("".join(change_str))
+        res+=i.upper()
+print(res)
