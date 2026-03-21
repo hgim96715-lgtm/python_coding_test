@@ -1,19 +1,6 @@
 def solution(dots):
-    a, b, c, d = dots
-    
-    def check(p1, p2, p3, p4):
-        dx1 = p2[0] - p1[0]
-        dy1 = p2[1] - p1[1]
-        dx2 = p4[0] - p3[0]
-        dy2 = p4[1] - p3[1]
-        
-        return dy1 * dx2 == dy2 * dx1
-    
-    if check(a, b, c, d):
-        return 1
-    if check(a, c, b, d):
-        return 1
-    if check(a, d, b, c):
-        return 1
-    
-    return 0
+    [[x1, y1], [x2, y2], [x3, y3], [x4, y4]]=dots
+    answer1 = ((y1-y2)*(x3-x4) == (y3-y4)*(x1-x2))
+    answer2 = ((y1-y3)*(x2-x4) == (y2-y4)*(x1-x3))
+    answer3 = ((y1-y4)*(x2-x3) == (y2-y3)*(x1-x4))
+    return 1 if answer1 or answer2 or answer3 else 0
